@@ -1,6 +1,36 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Register = () => {
+  const { createUser, updateNamePhoto } = useContext(AuthContext);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const userName = form.name.value;
+    const image = form.imageurl.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    // console.log(name, image, email, password);
+
+    createUser(email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+
+        toast.success("User created Successfully");
+        form.reset();
+        // User Name and Photo Updated
+        updateNamePhoto(userName, image)
+          .then(() => toast.success("Updated Name and Photo"))
+          .catch((err) => toast.error(err));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="relative">
       <img
@@ -42,7 +72,7 @@ const Register = () => {
                 <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                   Register
                 </h3>
-                <form>
+                <form onSubmit={handleSubmit}>
                   <div className="mb-1 sm:mb-2">
                     <label
                       htmlFor="name"
@@ -64,12 +94,12 @@ const Register = () => {
                       htmlFor="imageurl"
                       className="inline-block mb-1 font-medium"
                     >
-                      Imgage Url
+                      Image Url
                     </label>
                     <input
                       placeholder="Image Url"
                       required
-                      type="text"
+                      type="url"
                       className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                       id="imageurl"
                       name="imageurl"
@@ -96,7 +126,7 @@ const Register = () => {
                       htmlFor="password"
                       className="inline-block mb-1 font-medium"
                     >
-                      E-mail
+                      Password
                     </label>
                     <input
                       placeholder="password"
@@ -115,10 +145,10 @@ const Register = () => {
                       Submit
                     </button>
                   </div>
-                  <p className="text-xs text-gray-600 sm:text-sm">
-                    We respect your privacy. Unsubscribe at any time.
-                  </p>
                 </form>
+                <p className="text-xs text-gray-600 sm:text-sm">
+                  We respect your privacy. Unsubscribe at any time.
+                </p>
               </div>
             </div>
           </div>

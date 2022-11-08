@@ -1,7 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 
 const Login = () => {
+  const { login, googleLogIn } = useContext(AuthContext);
+
+  const handleLogIn = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    login(email, password)
+      .then((result) => {
+        const user = result.user;
+        form.reset();
+        toast.success("Successfully Login");
+      })
+      .catch((err) => toast.error(err));
+  };
+
+  const handleGoogleLogIn = () => {
+    googleLogIn()
+      .then(() => toast.success("Success Fully Login"))
+      .catch((err) => toast.error(err));
+  };
   return (
     <div className="relative">
       <img
@@ -43,7 +67,7 @@ const Login = () => {
                 <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                   Login
                 </h3>
-                <form>
+                <form onSubmit={handleLogIn}>
                   <div className="mb-1 sm:mb-2">
                     <label
                       htmlFor="email"
@@ -54,7 +78,7 @@ const Login = () => {
                     <input
                       placeholder="john.doe@example.org"
                       required
-                      type="text"
+                      type="email"
                       className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                       id="email"
                       name="email"
@@ -71,7 +95,7 @@ const Login = () => {
                     <input
                       placeholder="password"
                       required
-                      type="text"
+                      type="password"
                       className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                       id="password"
                       name="Password"
@@ -95,6 +119,7 @@ const Login = () => {
                 </div>
                 <div className="flex justify-center space-x-4">
                   <button
+                    onClick={handleGoogleLogIn}
                     aria-label="Log in with Google"
                     className="p-3 rounded-sm"
                   >
