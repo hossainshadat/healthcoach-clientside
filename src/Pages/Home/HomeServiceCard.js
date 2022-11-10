@@ -1,7 +1,7 @@
 import React from "react";
 
 const HomeServiceCard = ({ data }) => {
-  const { title, description } = data;
+  const { title, description, img } = data;
   return (
     <>
       <a
@@ -12,14 +12,14 @@ const HomeServiceCard = ({ data }) => {
         <img
           role="presentation"
           className="object-cover w-full rounded h-44 dark:bg-gray-500"
-          src="https://source.unsplash.com/random/480x360?1"
+          src={img}
         />
         <div className="p-6 space-y-2">
           <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
             {title}
           </h3>
           <span className="text-xs dark:text-gray-400">January 21, 2021</span>
-          <p>{description}</p>
+          <p>{description.slice(0, 250)}</p>
         </div>
       </a>
     </>
