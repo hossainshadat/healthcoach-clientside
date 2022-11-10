@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
-import LoadingSpinner from "../../../Shared/LoadingSpinner";
 import ServiceReviewCard from "../../Review/ServiceReviewCard";
 import ServiceReviewForm from "../../Review/ServiceReviewForm";
 
@@ -22,6 +21,7 @@ const ServiceDetail = () => {
       title,
       img,
       email,
+      price,
     };
 
     fetch("http://localhost:5000/reviews", {
@@ -35,7 +35,7 @@ const ServiceDetail = () => {
       .then((data) => {
         console.log(data);
         if (data.acknowledged) {
-          alert("Order placed successfully");
+          toast.success("Data loaded successfully");
         }
       })
       .catch((er) => console.error(er));
@@ -46,8 +46,6 @@ const ServiceDetail = () => {
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, [reviews]);
-
-  // console.log(reviews);
 
   return (
     <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
