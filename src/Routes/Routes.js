@@ -1,9 +1,11 @@
+import Blog from "../Pages/Blog/Blog";
 import ErrorPage from "../Pages/ErrorPage";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Main from "../Pages/Main/Main";
 import Register from "../Pages/Register/Register";
 import SelfReview from "../Pages/SelfReview/SelfReview";
+import AddService from "../Pages/Service/AddService";
 import Services from "../Pages/Service/Services";
 import ServiceDetail from "./../Pages/Service/ServiceDetail.js/ServiceDetail";
 import PrivateRoutes from "./PrivateRoutes";
@@ -27,17 +29,29 @@ export const router = createBrowserRouter([
       },
       {
         path: "/service/:id",
-        element: (
-          <PrivateRoutes>
-            <ServiceDetail />
-          </PrivateRoutes>
-        ),
+        element: <ServiceDetail />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/service/${params.id}`),
       },
       {
         path: "/review",
-        element: <SelfReview />,
+        element: (
+          <PrivateRoutes>
+            <SelfReview />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/addservice",
+        element: (
+          <PrivateRoutes>
+            <AddService />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/blog",
+        element: <Blog />,
       },
       {
         path: "/login",

@@ -1,286 +1,183 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const HomeService = () => {
   return (
-    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-      <div className="grid gap-5 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
-        <div className="overflow-hidden transition-shadow duration-300 bg-white rounded">
-          <a href="/" aria-label="Article">
-            <img
-              src="https://images.pexels.com/photos/932638/pexels-photo-932638.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
-              className="object-cover w-full h-64 rounded"
-              alt=""
-            />
-          </a>
-          <div className="py-5">
-            <p className="mb-2 text-xs font-semibold text-gray-600 uppercase">
-              13 Jul 2020
-            </p>
-            <a
-              href="/"
-              aria-label="Article"
-              className="inline-block mb-3 text-black transition-colors duration-200 hover:text-deep-purple-accent-700"
-            >
-              <p className="text-2xl font-bold leading-5">Diving to the deep</p>
-            </a>
-            <p className="mb-4 text-gray-700">
-              Sed ut perspiciatis unde omnis iste natus error sit sed quia
-              consequuntur magni voluptatem doloremque.
-            </p>
-            <div className="flex space-x-4">
-              <a
-                href="/"
-                aria-label="Likes"
-                className="flex items-start text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700 group"
-              >
-                <div className="mr-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-5 h-5 text-gray-600 transition-colors duration-200 group-hover:text-deep-purple-accent-700"
-                  >
-                    <polyline
-                      points="6 23 1 23 1 12 6 12"
-                      fill="none"
-                      strokeMiterlimit="10"
-                    />
-                    <path
-                      d="M6,12,9,1H9a3,3,0,0,1,3,3v6h7.5a3,3,0,0,1,2.965,3.456l-1.077,7A3,3,0,0,1,18.426,23H6Z"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeMiterlimit="10"
-                    />
-                  </svg>
-                </div>
-                <p className="font-semibold">7.4K</p>
-              </a>
-              <a
-                href="/"
-                aria-label="Comments"
-                className="flex items-start text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700 group"
-              >
-                <div className="mr-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    stroke="currentColor"
-                    className="w-5 h-5 text-gray-600 transition-colors duration-200 group-hover:text-deep-purple-accent-700"
-                  >
-                    <polyline
-                      points="23 5 23 18 19 18 19 22 13 18 12 18"
-                      fill="none"
-                      strokeMiterlimit="10"
-                    />
-                    <polygon
-                      points="19 2 1 2 1 14 5 14 5 19 12 14 19 14 19 2"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeMiterlimit="10"
-                    />
-                  </svg>
-                </div>
-                <p className="font-semibold">81</p>
-              </a>
-            </div>
-          </div>
+    <section className="dark:bg-gray-800 dark:text-gray-100">
+      <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
+        <div className="mx-auto mb-10 lg:max-w-xl sm:text-center">
+          <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
+            Discover Our Team
+          </p>
+          <p className="text-base text-gray-700 md:text-lg">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium.
+          </p>
         </div>
-        <div className="overflow-hidden transition-shadow duration-300 bg-white rounded">
-          <a href="/" aria-label="Article">
+        <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <a
+            rel="noopener noreferrer"
+            href="#"
+            className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900"
+          >
             <img
-              src="https://images.pexels.com/photos/1576937/pexels-photo-1576937.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500"
-              className="object-cover w-full h-64 rounded"
-              alt=""
+              role="presentation"
+              className="object-cover w-full rounded h-44 dark:bg-gray-500"
+              src="https://source.unsplash.com/random/480x360?1"
             />
-          </a>
-          <div className="py-5">
-            <p className="mb-2 text-xs font-semibold text-gray-600 uppercase">
-              4 Nov 2020
-            </p>
-            <a
-              href="/"
-              aria-label="Article"
-              className="inline-block mb-3 text-black transition-colors duration-200 hover:text-deep-purple-accent-700"
-            >
-              <p className="text-2xl font-bold leading-5">Conquer the World</p>
-            </a>
-            <p className="mb-4 text-gray-700">
-              Sed ut perspiciatis unde omnis iste natus error sit sed quia
-              consequuntur magni voluptatem doloremque.
-            </p>
-            <div className="flex space-x-4">
-              <a
-                href="/"
-                aria-label="Likes"
-                className="flex items-start text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700 group"
-              >
-                <div className="mr-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-5 h-5 text-gray-600 transition-colors duration-200 group-hover:text-deep-purple-accent-700"
-                  >
-                    <polyline
-                      points="6 23 1 23 1 12 6 12"
-                      fill="none"
-                      strokeMiterlimit="10"
-                    />
-                    <path
-                      d="M6,12,9,1H9a3,3,0,0,1,3,3v6h7.5a3,3,0,0,1,2.965,3.456l-1.077,7A3,3,0,0,1,18.426,23H6Z"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeMiterlimit="10"
-                    />
-                  </svg>
-                </div>
-                <p className="font-semibold">7.4K</p>
-              </a>
-              <a
-                href="/"
-                aria-label="Comments"
-                className="flex items-start text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700 group"
-              >
-                <div className="mr-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    stroke="currentColor"
-                    className="w-5 h-5 text-gray-600 transition-colors duration-200 group-hover:text-deep-purple-accent-700"
-                  >
-                    <polyline
-                      points="23 5 23 18 19 18 19 22 13 18 12 18"
-                      fill="none"
-                      strokeMiterlimit="10"
-                    />
-                    <polygon
-                      points="19 2 1 2 1 14 5 14 5 19 12 14 19 14 19 2"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeMiterlimit="10"
-                    />
-                  </svg>
-                </div>
-                <p className="font-semibold">81</p>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="overflow-hidden transition-shadow duration-300 bg-white rounded">
-          <a href="/" aria-label="Article">
-            <img
-              src="https://images.pexels.com/photos/2123755/pexels-photo-2123755.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-              className="object-cover w-full h-64 rounded"
-              alt=""
-            />
-          </a>
-          <div className="py-5">
-            <p className="mb-2 text-xs font-semibold text-gray-600 uppercase">
-              28 Dec 2020
-            </p>
-            <a
-              href="/"
-              aria-label="Article"
-              className="inline-block mb-3 text-black transition-colors duration-200 hover:text-deep-purple-accent-700"
-            >
-              <p className="text-2xl font-bold leading-5">
-                Explore the beautiful
+            <div className="p-6 space-y-2">
+              <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
+                In usu laoreet repudiare legendos
+              </h3>
+              <span className="text-xs dark:text-gray-400">
+                January 21, 2021
+              </span>
+              <p>
+                Mei ex aliquid eleifend forensibus, quo ad dicta apeirian
+                neglegentur, ex has tantas percipit perfecto. At per tempor
+                albucius perfecto, ei probatus consulatu patrioque mea, ei
+                vocent delicata indoctum pri.
               </p>
-            </a>
-            <p className="mb-4 text-gray-700">
-              Sed ut perspiciatis unde omnis iste natus error sit sed quia
-              consequuntur magni voluptatem doloremque.
-            </p>
-            <div className="flex space-x-4">
-              <a
-                href="/"
-                aria-label="Likes"
-                className="flex items-start text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700 group"
-              >
-                <div className="mr-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-5 h-5 text-gray-600 transition-colors duration-200 group-hover:text-deep-purple-accent-700"
-                  >
-                    <polyline
-                      points="6 23 1 23 1 12 6 12"
-                      fill="none"
-                      strokeMiterlimit="10"
-                    />
-                    <path
-                      d="M6,12,9,1H9a3,3,0,0,1,3,3v6h7.5a3,3,0,0,1,2.965,3.456l-1.077,7A3,3,0,0,1,18.426,23H6Z"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeMiterlimit="10"
-                    />
-                  </svg>
-                </div>
-                <p className="font-semibold">7.4K</p>
-              </a>
-              <a
-                href="/"
-                aria-label="Comments"
-                className="flex items-start text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700 group"
-              >
-                <div className="mr-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    stroke="currentColor"
-                    className="w-5 h-5 text-gray-600 transition-colors duration-200 group-hover:text-deep-purple-accent-700"
-                  >
-                    <polyline
-                      points="23 5 23 18 19 18 19 22 13 18 12 18"
-                      fill="none"
-                      strokeMiterlimit="10"
-                    />
-                    <polygon
-                      points="19 2 1 2 1 14 5 14 5 19 12 14 19 14 19 2"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeMiterlimit="10"
-                    />
-                  </svg>
-                </div>
-                <p className="font-semibold">81</p>
-              </a>
             </div>
-          </div>
+          </a>
+          <a
+            rel="noopener noreferrer"
+            href="#"
+            className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900"
+          >
+            <img
+              role="presentation"
+              className="object-cover w-full rounded h-44 dark:bg-gray-500"
+              src="https://source.unsplash.com/random/480x360?2"
+            />
+            <div className="p-6 space-y-2">
+              <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
+                In usu laoreet repudiare legendos
+              </h3>
+              <span className="text-xs dark:text-gray-400">
+                January 22, 2021
+              </span>
+              <p>
+                Mei ex aliquid eleifend forensibus, quo ad dicta apeirian
+                neglegentur, ex has tantas percipit perfecto. At per tempor
+                albucius perfecto, ei probatus consulatu patrioque mea, ei
+                vocent delicata indoctum pri.
+              </p>
+            </div>
+          </a>
+          <a
+            rel="noopener noreferrer"
+            href="#"
+            className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900"
+          >
+            <img
+              role="presentation"
+              className="object-cover w-full rounded h-44 dark:bg-gray-500"
+              src="https://source.unsplash.com/random/480x360?3"
+            />
+            <div className="p-6 space-y-2">
+              <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
+                In usu laoreet repudiare legendos
+              </h3>
+              <span className="text-xs dark:text-gray-400">
+                January 23, 2021
+              </span>
+              <p>
+                Mei ex aliquid eleifend forensibus, quo ad dicta apeirian
+                neglegentur, ex has tantas percipit perfecto. At per tempor
+                albucius perfecto, ei probatus consulatu patrioque mea, ei
+                vocent delicata indoctum pri.
+              </p>
+            </div>
+          </a>
+          <a
+            rel="noopener noreferrer"
+            href="#"
+            className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 hidden sm:block"
+          >
+            <img
+              role="presentation"
+              className="object-cover w-full rounded h-44 dark:bg-gray-500"
+              src="https://source.unsplash.com/random/480x360?4"
+            />
+            <div className="p-6 space-y-2">
+              <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
+                In usu laoreet repudiare legendos
+              </h3>
+              <span className="text-xs dark:text-gray-400">
+                January 24, 2021
+              </span>
+              <p>
+                Mei ex aliquid eleifend forensibus, quo ad dicta apeirian
+                neglegentur, ex has tantas percipit perfecto. At per tempor
+                albucius perfecto, ei probatus consulatu patrioque mea, ei
+                vocent delicata indoctum pri.
+              </p>
+            </div>
+          </a>
+          <a
+            rel="noopener noreferrer"
+            href="#"
+            className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 hidden sm:block"
+          >
+            <img
+              role="presentation"
+              className="object-cover w-full rounded h-44 dark:bg-gray-500"
+              src="https://source.unsplash.com/random/480x360?5"
+            />
+            <div className="p-6 space-y-2">
+              <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
+                In usu laoreet repudiare legendos
+              </h3>
+              <span className="text-xs dark:text-gray-400">
+                January 25, 2021
+              </span>
+              <p>
+                Mei ex aliquid eleifend forensibus, quo ad dicta apeirian
+                neglegentur, ex has tantas percipit perfecto. At per tempor
+                albucius perfecto, ei probatus consulatu patrioque mea, ei
+                vocent delicata indoctum pri.
+              </p>
+            </div>
+          </a>
+          <a
+            rel="noopener noreferrer"
+            href="#"
+            className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 hidden sm:block"
+          >
+            <img
+              role="presentation"
+              className="object-cover w-full rounded h-44 dark:bg-gray-500"
+              src="https://source.unsplash.com/random/480x360?6"
+            />
+            <div className="p-6 space-y-2">
+              <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
+                In usu laoreet repudiare legendos
+              </h3>
+              <span className="text-xs dark:text-gray-400">
+                January 26, 2021
+              </span>
+              <p>
+                Mei ex aliquid eleifend forensibus, quo ad dicta apeirian
+                neglegentur, ex has tantas percipit perfecto. At per tempor
+                albucius perfecto, ei probatus consulatu patrioque mea, ei
+                vocent delicata indoctum pri.
+              </p>
+            </div>
+          </a>
+        </div>
+        <div className="flex justify-center">
+          <Link to="/services">
+            <button
+              type="button"
+              className=" inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-green-400 hover:bg-green-700 focus:shadow-outline focus:outline-none"
+            >
+              See All
+            </button>
+          </Link>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

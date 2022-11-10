@@ -51,18 +51,38 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <a
-                href="/"
+              <Link
+                to="/blog"
                 aria-label="Product pricing"
                 title="Product pricing"
                 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
               >
-                Pricing
-              </a>
+                Blog
+              </Link>
             </li>
 
             {user?.email ? (
               <>
+                <li>
+                  <Link
+                    to="/addservice"
+                    aria-label="Product pricing"
+                    title="Product pricing"
+                    className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                  >
+                    AddService
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/review"
+                    aria-label="Product pricing"
+                    title="Product pricing"
+                    className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                  >
+                    Review
+                  </Link>
+                </li>
                 <li>
                   <Link
                     to="/login"
