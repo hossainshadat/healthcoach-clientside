@@ -49,7 +49,7 @@ const Services = () => {
         </div>
 
         <div className="grid gap-8 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
-          {data.map((service) => (
+          {data?.map((service) => (
             <ServiceCard key={service._id} service={service} />
           ))}
         </div>

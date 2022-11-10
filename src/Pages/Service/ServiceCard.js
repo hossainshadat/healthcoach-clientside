@@ -22,7 +22,7 @@ const ServiceCard = ({ service }) => {
           >
             Rating
           </a>
-          <span className="text-green-600"> — {rating} Star</span>
+          <span className="text-green-600"> — {rating} Star ⭐⭐⭐⭐🌟</span>
         </p>
         <a
           href="/"
