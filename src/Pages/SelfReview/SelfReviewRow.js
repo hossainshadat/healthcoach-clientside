@@ -25,7 +25,7 @@ const SelfReviewRow = ({ review }) => {
           <p className="dark:text-gray-400">{message}</p>
         </td>
         <td className="p-3 text-right">
-          <p>{price}</p>
+          <p>$ {price}</p>
         </td>
         <td className="p-3 text-right">
           <button

@@ -6,7 +6,7 @@ const BestPlan = () => {
       <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
         <div>
           <p className="mb-5 font-sans text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-            Our Pricing
+            Pricing
           </p>
         </div>
       </div>

@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Main from "../Pages/Main/Main";
 import Register from "../Pages/Register/Register";
+import EditReview from "../Pages/Review/EditReview";
 import SelfReview from "../Pages/SelfReview/SelfReview";
 import AddService from "../Pages/Service/AddService";
 import Services from "../Pages/Service/Services";
@@ -61,6 +62,15 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      ,
+      {
+        path: "/review/edit/:id",
+        element: (
+          <PrivateRoutes>
+            <EditReview />
+          </PrivateRoutes>
+        ),
       },
     ],
   },

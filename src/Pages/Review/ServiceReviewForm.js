@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 
 const ServiceReviewForm = ({ handleReview }) => {
+  const { user } = useContext(AuthContext);
   const handleSubmit = (e) => {
     e.preventDefault();
     const review = e.target.review.value;
@@ -33,12 +36,23 @@ const ServiceReviewForm = ({ handleReview }) => {
             </div>
           </div>
           <div className="flex justify-end">
-            <button
-              type="submit"
-              className=" inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-green-400 hover:bg-green-700 focus:shadow-outline focus:outline-none"
-            >
-              Submit
-            </button>
+            {user?.email ? (
+              <button
+                type="submit"
+                className=" inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-green-400 hover:bg-green-700 focus:shadow-outline focus:outline-none"
+              >
+                Submit
+              </button>
+            ) : (
+              <Link to="/login">
+                <button
+                  type="button"
+                  className=" inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-green-400 hover:bg-green-700 focus:shadow-outline focus:outline-none"
+                >
+                  Submit
+                </button>
+              </Link>
+            )}
           </div>
         </fieldset>
       </form>

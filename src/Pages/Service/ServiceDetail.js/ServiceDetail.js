@@ -8,7 +8,7 @@ import ServiceReviewForm from "../../Review/ServiceReviewForm";
 const ServiceDetail = () => {
   const [reviews, setReviews] = useState({});
   const { user } = useContext(AuthContext);
-  const { displayName, photoURL, email } = user;
+  // const { displayName, photoURL, email } = user;
   const { data } = useLoaderData();
   const { _id, title, img, description, price, rating } = data;
 
@@ -16,11 +16,11 @@ const ServiceDetail = () => {
     const review = {
       service_id: _id,
       message,
-      displayName,
-      photoURL,
+      displayName: user?.displayName,
+      photoURL: user?.photoURL,
       title,
       img,
-      email,
+      email: user?.email,
       price,
     };
 
