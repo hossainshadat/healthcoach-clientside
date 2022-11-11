@@ -1,6 +1,6 @@
 import React from "react";
 import { toast } from "react-toastify";
-import useTitle from './../../Hook/DocumentTitle';
+import useTitle from "./../../Hook/DocumentTitle";
 
 const AddService = () => {
   useTitle("Add Service");
