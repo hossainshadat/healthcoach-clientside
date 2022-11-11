@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
+import useTitle from "../../Hook/DocumentTitle";
 
 const Register = () => {
   const { createUser, updateNamePhoto } = useContext(AuthContext);
-
+  useTitle("Register");
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;

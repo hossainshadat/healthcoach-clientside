@@ -22,18 +22,18 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/homeservice"),
+        loader: () => fetch("https://server-self-seven.vercel.app/homeservice"),
       },
       {
         path: "/services",
         element: <Services />,
-        loader: () => fetch("http://localhost:5000/services"),
+        loader: () => fetch("https://server-self-seven.vercel.app/services"),
       },
       {
         path: "/service/:id",
         element: <ServiceDetail />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/service/${params.id}`),
+          fetch(`https://server-self-seven.vercel.app/service/${params.id}`),
       },
       {
         path: "/review",

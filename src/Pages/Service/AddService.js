@@ -1,7 +1,9 @@
 import React from "react";
 import { toast } from "react-toastify";
+import useTitle from './../../Hook/DocumentTitle';
 
 const AddService = () => {
+  useTitle("Add Service");
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -19,7 +21,7 @@ const AddService = () => {
       description,
     };
 
-    fetch("http://localhost:5000/services", {
+    fetch("https://server-self-seven.vercel.app/services", {
       method: "POST",
       headers: {
         "content-type": "application/json",

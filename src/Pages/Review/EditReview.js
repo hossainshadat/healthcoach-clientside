@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import useTitle from "../../Hook/DocumentTitle";
 
 const EditReview = () => {
   const navigate = useNavigate();
@@ -19,10 +20,9 @@ const EditReview = () => {
     email,
     displayName,
   } = editReview;
-  console.log(editReview);
-
+  useTitle("Update Review");
   useEffect(() => {
-    fetch(`http://localhost:5000/review/${id}`)
+    fetch(`https://server-self-seven.vercel.app/review/${id}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
@@ -42,7 +42,7 @@ const EditReview = () => {
 
     console.log(updateReview);
 
-    fetch(`http://localhost:5000/review/${id}`, {
+    fetch(`https://server-self-seven.vercel.app/review/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

@@ -2,15 +2,17 @@ import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
+import useTitle from "../../../Hook/DocumentTitle";
 import ServiceReviewCard from "../../Review/ServiceReviewCard";
 import ServiceReviewForm from "../../Review/ServiceReviewForm";
 
 const ServiceDetail = () => {
   const [reviews, setReviews] = useState({});
   const { user } = useContext(AuthContext);
-  // const { displayName, photoURL, email } = user;
   const { data } = useLoaderData();
   const { _id, title, img, description, price, rating } = data;
+
+  useTitle("Service Details");
 
   const handleReview = (message) => {
     const review = {
@@ -24,7 +26,7 @@ const ServiceDetail = () => {
       price,
     };
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://server-self-seven.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -42,7 +44,7 @@ const ServiceDetail = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://server-self-seven.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, [reviews]);

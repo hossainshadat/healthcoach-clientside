@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
+import useTitle from "../../Hook/DocumentTitle";
 import LoadingSpinner from "../../Shared/LoadingSpinner";
 import SelfReviewRow from "./SelfReviewRow";
 
@@ -9,9 +10,9 @@ const SelfReview = () => {
   const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
   const navigate = useNavigate();
-
+  useTitle("Your Review");
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+    fetch(`https://server-self-seven.vercel.app/reviews?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, [user?.email, reviews]);
@@ -22,7 +23,7 @@ const SelfReview = () => {
       "Are you sure, you want to cancel this review"
     );
     if (proceed) {
-      fetch(`http://localhost:5000/review/${id}`, {
+      fetch(`https://server-self-seven.vercel.app/review/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

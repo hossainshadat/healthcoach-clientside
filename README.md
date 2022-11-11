@@ -2,10 +2,6 @@
 
 Flat Icon, React router dom, Tailwind css, kitwind , Mamba UI, Flow Bite, Firebase,
 
-## Idea
-
-Hosted in Firebase -> [Health Coach](http://st.ourhtmldemo.com/new/Healthcoach-Preview/index.html)
-
 ## Live Link
 
 Hosted in Firebase -> [Health Coach](https://mern-development.web.app/)

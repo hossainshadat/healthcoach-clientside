@@ -44,14 +44,9 @@ const ServiceReviewForm = ({ handleReview }) => {
                 Submit
               </button>
             ) : (
-              <Link to="/login">
-                <button
-                  type="button"
-                  className=" inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-green-400 hover:bg-green-700 focus:shadow-outline focus:outline-none"
-                >
-                  Submit
-                </button>
-              </Link>
+              <h2 className=" max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-white">
+                Please login to add a review
+              </h2>
             )}
           </div>
         </fieldset>
