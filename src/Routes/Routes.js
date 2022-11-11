@@ -72,6 +72,11 @@ export const router = createBrowserRouter([
           </PrivateRoutes>
         ),
       },
+
+      {
+        path: "/blog",
+        element: <Blog />,
+      },
     ],
   },
 ]);
