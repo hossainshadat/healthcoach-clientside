@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
+import LoadingSpinner from "../../Shared/LoadingSpinner";
 import SelfReviewRow from "./SelfReviewRow";
 
 const SelfReview = () => {
@@ -10,8 +12,28 @@ const SelfReview = () => {
     fetch(`http://localhost:5000/reviews?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setReviews(data));
-  }, [user?.email]);
-  console.log(reviews?.data?.map((review) => console.log(review)));
+  }, [user?.email, reviews]);
+
+  const handleDelete = (id) => {
+    const proceed = window.confirm(
+      "Are you sure, you want to cancel this review"
+    );
+    if (proceed) {
+      fetch(`http://localhost:5000/review/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.success) {
+            LoadingSpinner();
+            toast.success(data.message);
+          } else {
+            toast.error(data.error);
+          }
+        })
+        .catch((err) => toast.error(err.message));
+    }
+  };
 
   return (
     <div className="container p-2 mx-auto sm:p-4 dark:text-gray-100">
@@ -32,9 +54,19 @@ const SelfReview = () => {
             </tr>
           </thead>
           <tbody>
-            {reviews?.data?.map((review) => (
-              <SelfReviewRow key={review._id} review={review} />
-            ))}
+            {reviews?.data ? (
+              reviews?.data?.map((review) => (
+                <SelfReviewRow
+                  key={review._id}
+                  review={review}
+                  handleDelete={handleDelete}
+                />
+              ))
+            ) : (
+              <span className="mb-4 text-2xl font-semibold leading-tight">
+                No Review found
+              </span>
+            )}
           </tbody>
         </table>
       </div>
@@ -43,3 +75,13 @@ const SelfReview = () => {
 };
 
 export default SelfReview;
+
+// {reviews?.data.length > 0 ? (
+//   reviews?.data?.map((review) => (
+//     <SelfReviewRow key={review._id} review={review} />
+//   ))
+// ) : (
+//   <h2 className="mb-4 text-2xl font-semibold leading-tight">
+//     No Review found
+//   </h2>
+// )}

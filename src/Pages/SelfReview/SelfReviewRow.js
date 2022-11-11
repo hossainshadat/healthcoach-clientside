@@ -1,7 +1,8 @@
 import React from "react";
 
-const SelfReviewRow = ({ review }) => {
-  const { service_id, img, message, title, price } = review;
+const SelfReviewRow = ({ review, handleDelete }) => {
+  const { _id, service_id, img, message, title, price } = review;
+
   return (
     <>
       <tr className="border-b border-opacity-20 dark:border-gray-700 dark:bg-gray-900">
@@ -35,6 +36,7 @@ const SelfReviewRow = ({ review }) => {
             Edit
           </button>
           <button
+            onClick={() => handleDelete(_id)}
             type="button"
             className=" inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-red-400 hover:bg-red-700 focus:shadow-outline focus:outline-none"
           >
