@@ -1,6 +1,6 @@
 import React from "react";
 
-const SelfReviewRow = ({ review, handleDelete }) => {
+const SelfReviewRow = ({ review, handleDelete, handleEdit }) => {
   const { _id, service_id, img, message, title, price } = review;
 
   return (
@@ -30,6 +30,7 @@ const SelfReviewRow = ({ review, handleDelete }) => {
         </td>
         <td className="p-3 text-right">
           <button
+            onClick={() => handleEdit(_id)}
             type="button"
             className=" inline-flex items-center justify-center mr-2 h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-yellow-400 hover:bg-yellow-700 focus:shadow-outline focus:outline-none"
           >
