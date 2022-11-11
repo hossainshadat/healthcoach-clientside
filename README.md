@@ -1,16 +1,16 @@
 # Usage At a Glance
 
-Flat Icon, React router dom, Tailwind css, kitwind , Mamba UI, Flow Bite, Firebase,
+Flat Icon, React router dom, Tailwind css, kitwind , Mamba UI, Flow Bite, Firebase, Vercel
 
 ## Live Link
 
-Hosted in Firebase -> [Health Coach](https://mern-development.web.app/)
+Hosted in Firebase -> [Health Coach](https://healthcoach-98a40.web.app/)
 
 ## React Router Dom v6.4
 
-Github Link -> [client side Link](https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-hossainshadat)
+Github Link -> [client side Link](https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-hossainshadat)
 
-Github Link -> [Server side Link](https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-hossainshadat)
+Github Link -> [Server side Link](https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-hossainshadat)
 
 ## Resources & Credits
 

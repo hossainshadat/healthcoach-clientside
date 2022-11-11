@@ -9,17 +9,7 @@ const EditReview = () => {
   const { id } = router;
 
   const [editReview, setEditReview] = useState({});
-  const {
-    _id,
-    title,
-    service_id,
-    price,
-    photoURL,
-    message,
-    img,
-    email,
-    displayName,
-  } = editReview;
+  const { message } = editReview;
   useTitle("Update Review");
   useEffect(() => {
     fetch(`https://server-self-seven.vercel.app/review/${id}`)
